@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.npm-cache
 /.pnp
 .pnp.js
 
@@ -11,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/tmp/
 
 # production
 /build

@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint ."
+    "start": "node scripts/start.mjs",
+    "lint": "eslint .",
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:prod": "node scripts/smoke.mjs --start"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
-    "next": "15.3.3",
+    "next": "15.3.9",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
@@ -19,7 +24,7 @@
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
     "eslint": "9.28.0",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "15.3.9",
     "typescript": "5.8.3"
   }
 }

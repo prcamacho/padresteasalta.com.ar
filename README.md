@@ -55,4 +55,21 @@ Comandos utiles:
 ```bash
 npm run build
 npm run lint
+npm run smoke
 ```
+
+Para probar la version de produccion localmente:
+
+```bash
+npm run build
+npm run smoke:prod
+```
+
+## Deploy en Railway
+
+Railway deberia usar:
+
+- Build command: `npm run build`
+- Start command: `npm run start`
+
+El script `start` respeta la variable `PORT` de Railway y escucha en `0.0.0.0`.
