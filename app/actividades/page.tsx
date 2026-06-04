@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { activities } from "@/data/site";
+import { activities, sponsorSlots } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Actividades | Padres TEA Salta",
@@ -44,6 +45,8 @@ export default function ActividadesPage() {
             </article>
           ))}
         </div>
+
+        <AdSlot slot={sponsorSlots.activities} />
       </section>
 
       <section className="section band">

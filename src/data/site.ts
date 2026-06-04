@@ -35,6 +35,16 @@ export type ContactChannel = {
   href: string;
 };
 
+export type SponsorSlot = {
+  id: string;
+  placement: "home" | "activities" | "directory" | "support" | "footer";
+  label: string;
+  title: string;
+  description: string;
+  actionLabel: string;
+  href: string;
+};
+
 export const siteNavItems: SiteNavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Orientacion", href: "/orientacion" },
@@ -233,3 +243,56 @@ export const contactChannels: ContactChannel[] = [
     href: "mailto:directorio@padresteasalta.com.ar"
   }
 ];
+
+export const sponsorSlots: Record<SponsorSlot["placement"], SponsorSlot> = {
+  home: {
+    id: "home-main-ally",
+    placement: "home",
+    label: "Espacio para aliados",
+    title: "Tu apoyo puede ayudar a sostener esta web",
+    description:
+      "Reservamos este lugar para empresas, profesionales o instituciones que quieran acompanar el crecimiento de la comunidad.",
+    actionLabel: "Consultar este espacio",
+    href: "/contacto"
+  },
+  activities: {
+    id: "activities-event-ally",
+    placement: "activities",
+    label: "Actividad acompanada por",
+    title: "Un aliado puede acompanar encuentros y charlas",
+    description:
+      "Este espacio esta pensado para sponsors de actividades, talleres o convocatorias, siempre identificado con claridad.",
+    actionLabel: "Acompanar una actividad",
+    href: "/contacto"
+  },
+  directory: {
+    id: "directory-featured-slot",
+    placement: "directory",
+    label: "Destacado patrocinado",
+    title: "Espacio destacado para centros, empresas o recursos utiles",
+    description:
+      "Los destacados ayudan a sostener la plataforma y se muestran separados de la informacion verificada del directorio.",
+    actionLabel: "Consultar destacado",
+    href: "/contacto"
+  },
+  support: {
+    id: "support-general-slot",
+    placement: "support",
+    label: "Patrocinio disponible",
+    title: "Acompanar la plataforma tambien es colaborar",
+    description:
+      "Podemos preparar espacios de apoyo para instituciones, comercios o profesionales que quieran sumar valor real.",
+    actionLabel: "Hablar sobre patrocinio",
+    href: "/contacto"
+  },
+  footer: {
+    id: "footer-ally-slot",
+    placement: "footer",
+    label: "Aliados",
+    title: "Espacio institucional disponible",
+    description:
+      "Un lugar discreto para reconocer acompanamientos generales de la plataforma.",
+    actionLabel: "Consultar",
+    href: "/contacto"
+  }
+};

@@ -41,6 +41,12 @@ La web esta organizada como portal y secciones separadas:
 
 El contenido base vive en `src/data/site.ts` para que sea facil reemplazarlo mas adelante por datos de Supabase o por contenido gestionado desde un panel administrador.
 
+## Espacios para aliados
+
+La web ya reserva espacios de patrocinio en home, actividades, directorio y colaboracion. Mientras no haya anunciantes reales, se muestran como llamados sobrios a consultar por espacios para aliados, no como banners vacios.
+
+Todo espacio pago o destacado debe aparecer identificado como patrocinado, aliado o publicidad para no confundirse con recomendaciones comunitarias o informacion verificada.
+
 ## Desarrollo local
 
 ```bash

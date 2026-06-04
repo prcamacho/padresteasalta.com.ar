@@ -1,16 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { AdSlot } from "@/components/ads/AdSlot";
+import { SiteFrame } from "@/components/layout/SiteFrame";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
+  activities,
   directoryCategories,
   homeActions,
   homeRoutes,
   platformModules,
-  activities,
+  sponsorSlots,
   trustMarkers
 } from "@/data/site";
-import { SiteFrame } from "@/components/layout/SiteFrame";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function HomePage() {
   return (
@@ -70,6 +72,8 @@ export function HomePage() {
             </Link>
           ))}
         </div>
+
+        <AdSlot slot={sponsorSlots.home} />
       </section>
 
       <section className="section band">

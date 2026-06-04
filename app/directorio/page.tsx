@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { directoryCategories } from "@/data/site";
+import { directoryCategories, sponsorSlots } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Directorio | Padres TEA Salta",
@@ -41,6 +42,8 @@ export default function DirectorioPage() {
             </article>
           ))}
         </div>
+
+        <AdSlot slot={sponsorSlots.directory} />
       </section>
 
       <section className="section split-band">
