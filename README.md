@@ -28,6 +28,19 @@ El repositorio todavia no tiene una aplicacion inicial creada. Para el MVP se re
 
 - [Roadmap MVP](docs/roadmap-mvp.md)
 
+## Estructura publica inicial
+
+La web esta organizada como portal y secciones separadas:
+
+- `/`: home de entrada con caminos principales.
+- `/orientacion`: guias, consultas y futuros flujos de acompanamiento.
+- `/actividades`: agenda, convocatorias e inscripciones futuras.
+- `/directorio`: centros, emprendimientos, aliados y recursos.
+- `/colaborar`: donaciones, pagos, patrocinios y apoyos.
+- `/contacto`: canales iniciales y futuro formulario administrable.
+
+El contenido base vive en `src/data/site.ts` para que sea facil reemplazarlo mas adelante por datos de Supabase o por contenido gestionado desde un panel administrador.
+
 ## Desarrollo local
 
 ```bash
