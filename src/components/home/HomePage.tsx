@@ -10,11 +10,13 @@ import {
   homeActions,
   homeRoutes,
   platformModules,
-  sponsorSlots,
   trustMarkers
 } from "@/data/site";
+import { getSponsorSlots } from "@/lib/supabase/public-data";
 
-export function HomePage() {
+export async function HomePage() {
+  const sponsorSlots = await getSponsorSlots();
+
   return (
     <SiteFrame>
       <section className="hero" aria-labelledby="hero-title">

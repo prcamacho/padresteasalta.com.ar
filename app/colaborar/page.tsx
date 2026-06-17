@@ -5,7 +5,8 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { collaborationOptions, sponsorSlots } from "@/data/site";
+import { collaborationOptions } from "@/data/site";
+import { getSponsorSlots } from "@/lib/supabase/public-data";
 
 export const metadata: Metadata = {
   title: "Colaborar | Padres TEA Salta",
@@ -13,7 +14,11 @@ export const metadata: Metadata = {
     "Opciones de colaboracion, donaciones, patrocinios y apoyo comunitario."
 };
 
-export default function ColaborarPage() {
+export const revalidate = 300;
+
+export default async function ColaborarPage() {
+  const sponsorSlots = await getSponsorSlots();
+
   return (
     <SiteFrame>
       <PageIntro

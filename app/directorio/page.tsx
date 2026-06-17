@@ -5,7 +5,8 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { directoryCategories, sponsorSlots } from "@/data/site";
+import { directoryCategories } from "@/data/site";
+import { getSponsorSlots } from "@/lib/supabase/public-data";
 
 export const metadata: Metadata = {
   title: "Directorio | Padres TEA Salta",
@@ -13,7 +14,11 @@ export const metadata: Metadata = {
     "Directorio comunitario de centros, emprendimientos, aliados y recursos utiles en Salta."
 };
 
-export default function DirectorioPage() {
+export const revalidate = 300;
+
+export default async function DirectorioPage() {
+  const sponsorSlots = await getSponsorSlots();
+
   return (
     <SiteFrame>
       <PageIntro

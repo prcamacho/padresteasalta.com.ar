@@ -5,7 +5,8 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { activities, sponsorSlots } from "@/data/site";
+import { activities } from "@/data/site";
+import { getSponsorSlots } from "@/lib/supabase/public-data";
 
 export const metadata: Metadata = {
   title: "Actividades | Padres TEA Salta",
@@ -13,7 +14,11 @@ export const metadata: Metadata = {
     "Agenda de actividades, encuentros y convocatorias para la comunidad TEA en Salta."
 };
 
-export default function ActividadesPage() {
+export const revalidate = 300;
+
+export default async function ActividadesPage() {
+  const sponsorSlots = await getSponsorSlots();
+
   return (
     <SiteFrame>
       <PageIntro

@@ -2,7 +2,8 @@ import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
-const routes = ["/", "/orientacion", "/actividades", "/directorio", "/colaborar", "/contacto"];
+const publicRoutes = ["/", "/orientacion", "/actividades", "/directorio", "/colaborar", "/contacto"];
+const protectedRoutes = ["/admin", "/admin/actividades"];
 const nextBin = join(process.cwd(), "node_modules", "next", "dist", "bin", "next");
 const mode = process.argv.includes("--start") ? "start" : "dev";
 const host = "127.0.0.1";
@@ -36,7 +37,7 @@ async function waitForServer(url, logs) {
 async function checkRoutes() {
   const results = [];
 
-  for (const route of routes) {
+  for (const route of publicRoutes) {
     const response = await fetch(`${baseUrl}${route}`);
     const html = await response.text();
     const hasHeading = /<h1[\s>]/.test(html);
@@ -46,6 +47,31 @@ async function checkRoutes() {
 
     if (!response.ok || !hasHeading || !hasNavigation) {
       throw new Error(`Smoke check failed for ${route}: ${results.at(-1)}`);
+    }
+  }
+
+  console.log(results.join("\n"));
+}
+
+async function checkProtectedRoutes() {
+  const results = [];
+
+  for (const route of protectedRoutes) {
+    const response = await fetch(`${baseUrl}${route}`, {
+      redirect: "manual"
+    });
+    const location = response.headers.get("location") ?? "";
+    const redirectsToLogin =
+      response.status >= 300 &&
+      response.status < 400 &&
+      location.includes("/admin/login");
+
+    results.push(
+      `${route} status=${response.status} redirectsToLogin=${redirectsToLogin}`
+    );
+
+    if (!redirectsToLogin) {
+      throw new Error(`Protected route check failed for ${route}: ${results.at(-1)}`);
     }
   }
 
@@ -77,6 +103,7 @@ try {
   }
 
   await checkRoutes();
+  await checkProtectedRoutes();
 } finally {
   server?.kill();
 }

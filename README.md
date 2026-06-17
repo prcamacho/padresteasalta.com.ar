@@ -62,7 +62,25 @@ Comandos utiles:
 npm run build
 npm run lint
 npm run smoke
+npm run db:migrate
+npm run supabase:check
+npm run admin:promote -- email@example.com
 ```
+
+Variables necesarias para Supabase:
+
+```bash
+DATABASE_URL=
+DIRECT_URL=
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+```
+
+El panel administrador vive en `/admin`. Para habilitar un usuario:
+
+1. Crear el usuario en Supabase Auth.
+2. Ejecutar `npm run admin:promote -- email@example.com`.
+3. Ingresar en `/admin/login`.
 
 Para probar la version de produccion localmente:
 
