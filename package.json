@@ -11,7 +11,9 @@
     "smoke:prod": "node scripts/smoke.mjs --start",
     "db:migrate": "node scripts/apply-migrations.mjs",
     "supabase:check": "node scripts/check-supabase.mjs",
-    "admin:promote": "node scripts/promote-admin.mjs"
+    "admin:promote": "node scripts/promote-admin.mjs",
+    "test-user:create": "node scripts/create-test-user.mjs",
+    "admin-user:create": "node scripts/create-test-user.mjs admin@padresteasalta.com.ar PadresTea123 admin"
   },
   "engines": {
     "node": ">=20.0.0"
