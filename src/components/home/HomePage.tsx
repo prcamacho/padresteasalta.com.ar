@@ -5,17 +5,19 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
-  activities,
   directoryCategories,
   homeActions,
   homeRoutes,
   platformModules,
   trustMarkers
 } from "@/data/site";
-import { getSponsorSlots } from "@/lib/supabase/public-data";
+import { getPublicActivities, getSponsorSlots } from "@/lib/supabase/public-data";
 
 export async function HomePage() {
-  const sponsorSlots = await getSponsorSlots();
+  const [sponsorSlots, publicActivities] = await Promise.all([
+    getSponsorSlots(),
+    getPublicActivities({ limit: 2 })
+  ]);
 
   return (
     <SiteFrame>
@@ -86,7 +88,7 @@ export async function HomePage() {
         />
 
         <div className="activity-list">
-          {activities.slice(0, 2).map((activity) => (
+          {publicActivities.map((activity) => (
             <article className="activity-card" key={activity.title}>
               <div>
                 <span>{activity.status}</span>

@@ -26,6 +26,8 @@ export type ActivityItem = {
   meta: string;
   description: string;
   status: string;
+  registrationUrl?: string | null;
+  source?: "database" | "fallback";
 };
 
 export type ContactChannel = {
@@ -51,7 +53,8 @@ export const siteNavItems: SiteNavItem[] = [
   { label: "Actividades", href: "/actividades" },
   { label: "Directorio", href: "/directorio" },
   { label: "Colaborar", href: "/colaborar" },
-  { label: "Contacto", href: "/contacto" }
+  { label: "Contacto", href: "/contacto" },
+  { label: "Ingresar", href: "/ingresar" }
 ];
 
 export const homeActions: SiteAction[] = [

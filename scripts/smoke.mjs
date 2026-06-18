@@ -2,8 +2,23 @@ import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
-const publicRoutes = ["/", "/orientacion", "/actividades", "/directorio", "/colaborar", "/contacto"];
-const protectedRoutes = ["/admin", "/admin/actividades"];
+const publicRoutes = [
+  "/",
+  "/orientacion",
+  "/actividades",
+  "/directorio",
+  "/colaborar",
+  "/contacto",
+  "/privacidad"
+];
+const authRoutes = ["/ingresar", "/registro"];
+const adminProtectedRoutes = [
+  "/admin",
+  "/admin/actividades",
+  "/admin/actividades/nueva",
+  "/admin/actividades/smoke-test-id"
+];
+const accountProtectedRoutes = ["/mi-cuenta"];
 const nextBin = join(process.cwd(), "node_modules", "next", "dist", "bin", "next");
 const mode = process.argv.includes("--start") ? "start" : "dev";
 const host = "127.0.0.1";
@@ -53,10 +68,28 @@ async function checkRoutes() {
   console.log(results.join("\n"));
 }
 
-async function checkProtectedRoutes() {
+async function checkAuthRoutes() {
   const results = [];
 
-  for (const route of protectedRoutes) {
+  for (const route of authRoutes) {
+    const response = await fetch(`${baseUrl}${route}`);
+    const html = await response.text();
+    const hasHeading = /<h1[\s>]/.test(html);
+
+    results.push(`${route} status=${response.status} h1=${hasHeading}`);
+
+    if (!response.ok || !hasHeading) {
+      throw new Error(`Auth route check failed for ${route}: ${results.at(-1)}`);
+    }
+  }
+
+  console.log(results.join("\n"));
+}
+
+async function checkRedirects(routes, expectedLoginPath) {
+  const results = [];
+
+  for (const route of routes) {
     const response = await fetch(`${baseUrl}${route}`, {
       redirect: "manual"
     });
@@ -64,7 +97,7 @@ async function checkProtectedRoutes() {
     const redirectsToLogin =
       response.status >= 300 &&
       response.status < 400 &&
-      location.includes("/admin/login");
+      location.includes(expectedLoginPath);
 
     results.push(
       `${route} status=${response.status} redirectsToLogin=${redirectsToLogin}`
@@ -103,7 +136,9 @@ try {
   }
 
   await checkRoutes();
-  await checkProtectedRoutes();
+  await checkAuthRoutes();
+  await checkRedirects(adminProtectedRoutes, "/admin/login");
+  await checkRedirects(accountProtectedRoutes, "/ingresar");
 } finally {
   server?.kill();
 }

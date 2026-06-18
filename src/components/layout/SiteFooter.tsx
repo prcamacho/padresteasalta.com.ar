@@ -27,6 +27,7 @@ export function SiteFooter() {
             {item.label}
           </Link>
         ))}
+        <Link href="/privacidad">Privacidad</Link>
       </nav>
     </footer>
   );

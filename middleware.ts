@@ -7,6 +7,18 @@ type ProfileRole = {
   role: "member" | "editor" | "admin";
 };
 
+function isAdminRoute(pathname: string) {
+  return pathname.startsWith("/admin");
+}
+
+function isAdminLoginRoute(pathname: string) {
+  return pathname === "/admin/login";
+}
+
+function isAccountRoute(pathname: string) {
+  return pathname === "/mi-cuenta" || pathname.startsWith("/mi-cuenta/");
+}
+
 function getSupabaseConfig() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const publishableKey =
@@ -25,12 +37,17 @@ function getSupabaseConfig() {
 
 export async function middleware(request: NextRequest) {
   const config = getSupabaseConfig();
-  const loginUrl = new URL("/admin/login", request.url);
-  const isLoginRoute = request.nextUrl.pathname === "/admin/login";
+  const pathname = request.nextUrl.pathname;
+  const nextPath = `${request.nextUrl.pathname}${request.nextUrl.search}`;
+  const adminLoginUrl = new URL("/admin/login", request.url);
+  const accountLoginUrl = new URL("/ingresar", request.url);
 
   if (!config) {
-    if (isLoginRoute) return NextResponse.next();
+    if (isAdminLoginRoute(pathname)) return NextResponse.next();
+
+    const loginUrl = isAdminRoute(pathname) ? adminLoginUrl : accountLoginUrl;
     loginUrl.searchParams.set("error", "missing-config");
+    loginUrl.searchParams.set("next", nextPath);
     return NextResponse.redirect(loginUrl);
   }
 
@@ -65,10 +82,15 @@ export async function middleware(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    if (isLoginRoute) return response;
+    if (isAdminLoginRoute(pathname)) return response;
 
-    loginUrl.searchParams.set("next", request.nextUrl.pathname);
+    const loginUrl = isAdminRoute(pathname) ? adminLoginUrl : accountLoginUrl;
+    loginUrl.searchParams.set("next", nextPath);
     return NextResponse.redirect(loginUrl);
+  }
+
+  if (isAccountRoute(pathname)) {
+    return response;
   }
 
   const { data } = await supabase
@@ -79,13 +101,13 @@ export async function middleware(request: NextRequest) {
   const profile = data as ProfileRole | null;
 
   if (profile?.role !== "admin") {
-    if (isLoginRoute) return response;
+    if (isAdminLoginRoute(pathname)) return response;
 
-    loginUrl.searchParams.set("error", "not-authorized");
-    return NextResponse.redirect(loginUrl);
+    adminLoginUrl.searchParams.set("error", "not-authorized");
+    return NextResponse.redirect(adminLoginUrl);
   }
 
-  if (isLoginRoute) {
+  if (isAdminLoginRoute(pathname)) {
     return NextResponse.redirect(new URL("/admin", request.url));
   }
 
@@ -93,5 +115,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"]
+  matcher: ["/admin/:path*", "/mi-cuenta/:path*"]
 };

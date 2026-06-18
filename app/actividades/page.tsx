@@ -5,8 +5,7 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { activities } from "@/data/site";
-import { getSponsorSlots } from "@/lib/supabase/public-data";
+import { getPublicActivities, getSponsorSlots } from "@/lib/supabase/public-data";
 
 export const metadata: Metadata = {
   title: "Actividades | Padres TEA Salta",
@@ -17,7 +16,10 @@ export const metadata: Metadata = {
 export const revalidate = 300;
 
 export default async function ActividadesPage() {
-  const sponsorSlots = await getSponsorSlots();
+  const [sponsorSlots, publicActivities] = await Promise.all([
+    getSponsorSlots(),
+    getPublicActivities()
+  ]);
 
   return (
     <SiteFrame>
@@ -34,19 +36,31 @@ export default async function ActividadesPage() {
       <section className="section">
         <SectionHeader
           eyebrow="Agenda"
-          title="Actividades iniciales"
-          description="Por ahora son entradas base. Luego pueden venir desde una base de datos y administrarse desde el panel."
+          title="Actividades publicadas"
+          description="Las actividades publicadas desde el panel aparecen aca. Si todavia no hay agenda cargada, mantenemos una base orientativa."
         />
 
         <div className="activity-list">
-          {activities.map((activity) => (
+          {publicActivities.map((activity) => (
             <article className="activity-card" key={activity.title}>
               <div>
                 <span>{activity.status}</span>
                 <h3>{activity.title}</h3>
                 <p className="meta">{activity.meta}</p>
               </div>
-              <p>{activity.description}</p>
+              <div>
+                <p>{activity.description}</p>
+                {activity.registrationUrl ? (
+                  <a
+                    className="text-link"
+                    href={activity.registrationUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Inscribirme
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>

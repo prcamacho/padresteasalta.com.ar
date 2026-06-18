@@ -70,6 +70,7 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       contact_inquiries: {
         Row: {
@@ -88,6 +89,7 @@ export type Database = {
         };
         Insert: Record<string, never>;
         Update: Record<string, never>;
+        Relationships: [];
       };
       directory_entries: {
         Row: {
@@ -107,6 +109,7 @@ export type Database = {
         };
         Insert: Record<string, never>;
         Update: Record<string, never>;
+        Relationships: [];
       };
       profiles: {
         Row: {
@@ -114,11 +117,44 @@ export type Database = {
           display_name: string | null;
           phone: string | null;
           role: "member" | "editor" | "admin";
+          account_type: "user" | "organization";
+          locality: string | null;
+          whatsapp_group_opt_in: boolean;
+          privacy_terms_accepted_at: string | null;
+          adult_confirmed_at: string | null;
+          organization_review_notes: string | null;
           created_at: string;
           updated_at: string;
         };
-        Insert: Record<string, never>;
-        Update: Record<string, never>;
+        Insert: {
+          id: string;
+          display_name?: string | null;
+          phone?: string | null;
+          role?: "member" | "editor" | "admin";
+          account_type?: "user" | "organization";
+          locality?: string | null;
+          whatsapp_group_opt_in?: boolean;
+          privacy_terms_accepted_at?: string | null;
+          adult_confirmed_at?: string | null;
+          organization_review_notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          display_name?: string | null;
+          phone?: string | null;
+          role?: "member" | "editor" | "admin";
+          account_type?: "user" | "organization";
+          locality?: string | null;
+          whatsapp_group_opt_in?: boolean;
+          privacy_terms_accepted_at?: string | null;
+          adult_confirmed_at?: string | null;
+          organization_review_notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
       };
       sponsor_campaigns: {
         Row: {
@@ -133,6 +169,7 @@ export type Database = {
         };
         Insert: Record<string, never>;
         Update: Record<string, never>;
+        Relationships: [];
       };
       sponsor_slots: {
         Row: {
@@ -168,12 +205,14 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;
     Enums: {
       app_role: "member" | "editor" | "admin";
+      account_type: "user" | "organization";
       directory_category:
         | "therapy_center"
         | "professional"

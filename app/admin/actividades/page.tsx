@@ -18,9 +18,28 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminActivitiesPage() {
+type AdminActivitiesPageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
+const listErrorMessages: Record<string, string> = {
+  "not-found": "No encontramos la actividad solicitada.",
+  default: "No pudimos completar la operacion."
+};
+
+function getParam(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+export default async function AdminActivitiesPage({
+  searchParams
+}: AdminActivitiesPageProps) {
   const { supabase } = await requireAdmin();
+  const params = searchParams ? await searchParams : {};
   const { activities, errorMessage } = await getAdminActivities(supabase);
+  const created = getParam(params.created) === "1";
+  const updated = getParam(params.updated) === "1";
+  const listError = getParam(params.error);
   const publishedCount = activities.filter(
     (activity) => activity.status === "published"
   ).length;
@@ -54,9 +73,9 @@ export default async function AdminActivitiesPage() {
         </div>
 
         <div className="admin-header-actions">
-          <span className="button secondary admin-disabled-action">
+          <Link className="button primary" href="/admin/actividades/nueva">
             Crear actividad
-          </span>
+          </Link>
         </div>
       </header>
 
@@ -68,6 +87,20 @@ export default async function AdminActivitiesPage() {
           </article>
         ))}
       </section>
+
+      {created ? (
+        <p className="form-success">Actividad creada correctamente.</p>
+      ) : null}
+
+      {updated ? (
+        <p className="form-success">Actividad actualizada correctamente.</p>
+      ) : null}
+
+      {listError ? (
+        <p className="form-alert">
+          {listErrorMessages[listError] ?? listErrorMessages.default}
+        </p>
+      ) : null}
 
       {errorMessage ? <p className="form-alert">{errorMessage}</p> : null}
 
@@ -124,6 +157,12 @@ export default async function AdminActivitiesPage() {
                       {activity.is_featured ? "Destacada" : "Normal"}
                     </span>
                     <span className="admin-slug">/{activity.slug}</span>
+                    <Link
+                      className="button secondary admin-small-action"
+                      href={`/admin/actividades/${activity.id}`}
+                    >
+                      Editar
+                    </Link>
                   </div>
                 </article>
               );
