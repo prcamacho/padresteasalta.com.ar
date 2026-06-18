@@ -12,7 +12,7 @@ const errorMessages: Record<string, string> = {
   "invalid-credentials": "Email o contrasena incorrectos.",
   "invalid-session": "No se pudo validar la sesion.",
   "missing-config": "Faltan variables publicas de Supabase.",
-  "missing-fields": "Completá email y contrasena.",
+  "missing-fields": "Completa email y contrasena.",
   "not-authorized": "Tu usuario existe, pero no tiene permisos de administrador."
 };
 
@@ -39,8 +39,8 @@ export default async function AdminLoginPage({
           <p className="eyebrow">Panel administrador</p>
           <h1 id="admin-login-title">Ingresar</h1>
           <p>
-            Acceso reservado para administrar actividades, directorio, consultas
-            y espacios patrocinados.
+            Este acceso es para quienes ayudan a mantener el sitio al dia:
+            actividades, contactos, consultas y espacios de apoyo.
           </p>
         </div>
 

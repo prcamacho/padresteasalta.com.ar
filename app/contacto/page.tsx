@@ -16,15 +16,15 @@ export default function ContactoPage() {
     <SiteFrame>
       <PageIntro
         eyebrow="Contacto"
-        title="Un primer canal para escuchar, orientar y ordenar consultas"
-        description="Por ahora usamos enlaces de email. El siguiente paso sera reemplazarlos por formularios conectados al panel administrador."
+        title="Escribinos y contanos que necesitas"
+        description="Puede ser una duda, una actividad, un dato para sumar o una propuesta. Si no sabes bien en que categoria entra, escribi igual."
       />
 
       <section className="section">
         <SectionHeader
           eyebrow="Canales"
-          title="Elegir el motivo ayuda a responder mejor"
-          description="Separar las consultas desde el inicio facilita futuras notificaciones, prioridades y reportes internos."
+          title="Elegir el motivo nos ayuda a ubicarnos"
+          description="No hace falta escribir perfecto. Con una idea clara del tema, ya podemos empezar."
         />
 
         <div className="card-grid">
@@ -43,16 +43,15 @@ export default function ContactoPage() {
       <section className="section split-band">
         <div>
           <p className="eyebrow">Privacidad</p>
-          <h2>El formulario futuro debe pedir lo minimo necesario</h2>
+          <h2>Contanos solo lo que haga falta</h2>
           <p>
-            Algunas consultas pueden incluir datos sensibles. Antes de guardar
-            informacion personal conviene sumar aviso de privacidad,
-            consentimiento y permisos por rol.
+            Hay temas sensibles. Esta bien cuidar los detalles y compartir solo
+            lo necesario para que podamos darte una mano.
           </p>
         </div>
 
         <div className="support-panel">
-          <p>Campos iniciales sugeridos</p>
+          <p>Con esto suele alcanzar</p>
           <ul>
             <li>Nombre y forma de contacto.</li>
             <li>Motivo de la consulta.</li>

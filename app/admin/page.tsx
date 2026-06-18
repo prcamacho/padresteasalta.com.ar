@@ -6,7 +6,7 @@ import { requireAdmin } from "@/lib/supabase/auth-server";
 
 export const metadata: Metadata = {
   title: "Panel admin | Padres TEA Salta",
-  description: "Panel administrador de la plataforma."
+  description: "Panel de gestion de Padres TEA Salta."
 };
 
 export const dynamic = "force-dynamic";
@@ -15,18 +15,18 @@ const dashboardCards = [
   {
     key: "contact_inquiries",
     label: "Consultas",
-    helper: "Entrantes por orientacion, directorio, actividades o sponsors."
+    helper: "Mensajes que llegan por orientacion, actividades, directorio o sponsors."
   },
   {
     key: "activities",
     label: "Actividades",
-    helper: "Agenda administrable de encuentros y convocatorias.",
+    helper: "Charlas, encuentros y convocatorias para revisar o publicar.",
     href: "/admin/actividades"
   },
   {
     key: "directory_entries",
     label: "Directorio",
-    helper: "Centros, recursos, empresas y emprendimientos."
+    helper: "Centros, recursos, aliados y emprendimientos familiares."
   },
   {
     key: "sponsor_campaigns",
@@ -57,10 +57,10 @@ export default async function AdminPage() {
       <header className="admin-header">
         <div>
           <p className="eyebrow">Panel administrador</p>
-          <h1>Resumen operativo</h1>
+          <h1>Resumen del dia a dia</h1>
           <p>
-            Sesion iniciada como {profile.display_name ?? user.email}. Este es
-            el punto de partida para sumar CRUDs reales.
+            Sesion iniciada como {profile.display_name ?? user.email}. Desde
+            aca se ve lo que hay que mirar.
           </p>
         </div>
 
@@ -103,10 +103,10 @@ export default async function AdminPage() {
 
       <section className="admin-next">
         <div>
-          <h2>Proximo incremento recomendado</h2>
+          <h2>Para tener presente</h2>
           <p>
-            Crear el CRUD de actividades: es el modulo mas visible, de bajo
-            riesgo y valida el flujo completo de admin a web publica.
+            Si la agenda esta al dia, las familias encuentran mas rapido lo que
+            esta pasando.
           </p>
         </div>
       </section>

@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 export const metadata: Metadata = {
   title: "Privacidad | Padres TEA Salta",
   description:
-    "Politica inicial de privacidad y uso de datos de Padres TEA Salta."
+    "Privacidad y uso responsable de datos en Padres TEA Salta."
 };
 
 export default function PrivacyPage() {
@@ -15,91 +15,85 @@ export default function PrivacyPage() {
     <SiteFrame>
       <PageIntro
         eyebrow="Privacidad"
-        title="Uso responsable de datos en la plataforma"
-        description="Esta politica inicial ordena como tratamos los datos de usuarios, organizaciones y consultas dentro de un proyecto comunitario que puede crecer."
+        title="Tus datos no son un tramite mas"
+        description="Pedimos datos para poder responder y organizarnos, no para juntar informacion porque si."
       />
 
       <section className="section">
         <SectionHeader
           eyebrow="Criterios"
-          title="Principios para cuidar la informacion"
-          description="La plataforma debe pedir solo los datos necesarios, explicar para que se usan y permitir que la organizacion administre la informacion con responsabilidad."
+          title="Lo dejamos escrito para que no haya dudas"
+          description="Si alguien nos confia una consulta o se registra, esa informacion se trata con cuidado."
         />
 
         <div className="privacy-content">
           <article>
-            <h3>Datos que podemos solicitar</h3>
+            <h3>Que datos pedimos</h3>
             <p>
-              En el registro inicial pedimos nombre, email, tipo de cuenta,
-              localidad y telefono. Tambien registramos si la persona desea ser
-              agregada al grupo de WhatsApp, si confirma ser mayor de edad y si
-              acepta esta politica.
+              Al crear una cuenta pedimos nombre, email, tipo de cuenta,
+              localidad y telefono. Tambien guardamos si la persona quiere ser
+              agregada al grupo de WhatsApp, si confirmo ser mayor de edad y si
+              acepto esta politica.
             </p>
           </article>
 
           <article>
-            <h3>Para que usamos los datos</h3>
+            <h3>Para que los usamos</h3>
             <p>
-              Los datos se usan para identificar cuentas, responder consultas,
-              organizar actividades, contactar a usuarios cuando sea necesario y
-              habilitar funciones acordes al tipo de cuenta.
+              Los usamos para identificar cuentas, responder consultas,
+              organizar actividades y comunicarnos cuando hace falta.
             </p>
           </article>
 
           <article>
             <h3>Organizaciones</h3>
             <p>
-              Las organizaciones pueden registrarse libremente. Mas adelante, si
-              solicitan funciones como espacios publicitarios, directorio,
-              patrocinios o publicaciones verificadas, se les podra pedir
-              documentacion respaldatoria.
+              Las organizaciones pueden registrarse libremente. Si piden
+              publicidad, patrocinio, directorio o publicaciones verificadas,
+              podemos pedir algun respaldo.
             </p>
           </article>
 
           <article>
             <h3>Menores de edad</h3>
             <p>
-              En esta etapa solo deben registrarse personas mayores de edad. Si
-              una consulta involucra a ninas, ninos o adolescentes, debe ser
-              realizada por una persona adulta responsable.
+              El registro es para personas mayores de edad. Si el tema tiene que
+              ver con una nina, un nino o un adolescente, escribe una persona
+              adulta responsable.
             </p>
           </article>
 
           <article>
             <h3>Datos sensibles</h3>
             <p>
-              No pedimos diagnosticos ni documentacion clinica en el registro.
-              Si en el futuro se reciben datos sensibles para orientar una
-              situacion concreta, deberan tratarse con mayor cuidado, acceso
-              limitado y finalidad clara.
+              No pedimos diagnosticos ni papeles clinicos para registrarse. Si
+              una consulta trae datos delicados, los usamos solo para orientar
+              esa situacion.
             </p>
           </article>
 
           <article>
             <h3>WhatsApp y comunicaciones</h3>
             <p>
-              La incorporacion al grupo de WhatsApp es opcional. Las
-              comunicaciones futuras por email, Telegram o WhatsApp deberian
-              respetar la finalidad informada y permitir revisar preferencias.
+              Entrar al grupo de WhatsApp es opcional. Los avisos por email,
+              Telegram o WhatsApp se usan para temas de la comunidad o para
+              responder consultas.
             </p>
           </article>
 
           <article>
-            <h3>Acceso y administracion</h3>
+            <h3>Acceso interno</h3>
             <p>
-              El acceso a datos de usuarios queda reservado a cuentas
-              administradoras autorizadas. La plataforma debe mantener permisos
-              separados entre usuarios, organizaciones y administradores.
+              Los datos no quedan abiertos para cualquiera. Solo acceden las
+              personas autorizadas para responder o administrar el sitio.
             </p>
           </article>
 
           <article>
             <h3>Marco legal</h3>
             <p>
-              Este texto es una base operativa y deberia ser revisado
-              legalmente a medida que la plataforma incorpore pagos, sorteos,
-              datos sensibles, comunicaciones automatizadas o documentacion
-              respaldatoria.
+              Si sumamos pagos, sorteos o pedidos de documentacion, este texto
+              se revisa para que siga siendo claro y correcto.
             </p>
           </article>
         </div>

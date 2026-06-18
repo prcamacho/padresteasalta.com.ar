@@ -51,7 +51,7 @@ export function ActivityForm({
           <textarea
             maxLength={260}
             name="summary"
-            placeholder="Una descripcion breve para identificar la actividad."
+            placeholder="Una frase corta para contar de que se trata."
             required
             rows={3}
             defaultValue={activity?.summary ?? ""}
@@ -62,7 +62,7 @@ export function ActivityForm({
           Descripcion
           <textarea
             name="description"
-            placeholder="Detalle opcional para el equipo y futuras paginas publicas."
+            placeholder="Aca podes sumar horarios, detalles o lo que haga falta."
             rows={6}
             defaultValue={activity?.description ?? ""}
           />
@@ -124,7 +124,7 @@ export function ActivityForm({
           <input
             maxLength={140}
             name="location_name"
-            placeholder="Sede, plaza, salon o plataforma"
+            placeholder="Sede, plaza, salon o link si es virtual"
             type="text"
             defaultValue={activity?.location_name ?? ""}
           />
@@ -135,7 +135,7 @@ export function ActivityForm({
           <input
             maxLength={180}
             name="address"
-            placeholder="Direccion fisica si corresponde"
+            placeholder="Direccion, si hace falta"
             type="text"
             defaultValue={activity?.address ?? ""}
           />

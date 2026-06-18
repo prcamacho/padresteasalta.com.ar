@@ -16,7 +16,7 @@ export function SiteFooter() {
           />
         </span>
         <p className="footer-brand">Padres TEA Salta</p>
-        <p>Plataforma comunitaria en construccion.</p>
+        <p>Un espacio comunitario para acompanarnos mejor.</p>
       </div>
 
       <p className="footer-credit">

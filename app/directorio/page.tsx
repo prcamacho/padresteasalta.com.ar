@@ -23,8 +23,8 @@ export default async function DirectorioPage() {
     <SiteFrame>
       <PageIntro
         eyebrow="Directorio"
-        title="Recursos locales con informacion clara y actualizable"
-        description="El directorio se prepara para crecer con fichas administrables, busqueda, filtros y espacios patrocinados identificados."
+        title="Contactos utiles de Salta, todos en un mismo lugar"
+        description="La idea es simple: que cuando alguien necesite consultar, no tenga que empezar preguntando desde cero."
         actions={[
           { label: "Sumar una ficha", href: "/contacto", variant: "primary" },
           { label: "Ver colaboracion", href: "/colaborar", variant: "secondary" }
@@ -34,8 +34,8 @@ export default async function DirectorioPage() {
       <section className="section">
         <SectionHeader
           eyebrow="Categorias"
-          title="Una estructura para ordenar recursos"
-          description="Cada categoria puede convertirse mas adelante en una tabla propia con filtros, moderacion y fecha de actualizacion."
+          title="Para buscar sin marearse"
+          description="Separamos los datos por tipo, asi es mas facil encontrar lo que uno necesita."
         />
 
         <div className="card-grid">
@@ -54,16 +54,15 @@ export default async function DirectorioPage() {
       <section className="section split-band">
         <div>
           <p className="eyebrow">Transparencia</p>
-          <h2>Destacado no debe confundirse con recomendacion clinica</h2>
+          <h2>Si algo esta patrocinado, lo decimos</h2>
           <p>
-            Los centros o empresas que paguen por mayor visibilidad deben
-            aparecer marcados como patrocinados. La plataforma puede ordenar y
-            verificar datos, pero no deberia prometer resultados terapeuticos.
+            Un destacado es un espacio pago, no una recomendacion clinica. La
+            confianza se cuida diciendo las cosas de frente.
           </p>
         </div>
 
         <div className="support-panel">
-          <p>Datos sugeridos por ficha</p>
+          <p>Datos que nos gustaria tener claros</p>
           <ul>
             <li>Nombre, localidad y zona de atencion.</li>
             <li>Especialidades y canales de contacto.</li>
@@ -76,10 +75,10 @@ export default async function DirectorioPage() {
       <section className="cta-section">
         <div>
           <p className="eyebrow">Actualizacion</p>
-          <h2>La informacion deberia confirmarse periodicamente</h2>
+          <h2>Si ves un dato viejo, avisanos</h2>
           <p>
-            Cuando exista la base de datos, se puede automatizar la revision
-            mensual de fichas por email o WhatsApp Business con opt-in.
+            Los telefonos cambian, los horarios tambien. Avisar cuando algo no
+            esta bien ayuda a la siguiente familia que entre.
           </p>
         </div>
         <Link className="button primary" href="/contacto">

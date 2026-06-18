@@ -45,8 +45,8 @@ export default async function NewActivityPage({
           <p className="eyebrow">Actividades</p>
           <h1>Nueva actividad</h1>
           <p>
-            Carga una actividad como borrador o publicala cuando la informacion
-            ya este revisada.
+            Si falta revisar algun dato, dejala como borrador. Cuando este
+            lista, publicala.
           </p>
         </div>
       </header>
@@ -54,7 +54,7 @@ export default async function NewActivityPage({
       <section className="admin-panel" aria-labelledby="new-activity-title">
         <div className="admin-panel-header">
           <div>
-            <p className="eyebrow">Alta</p>
+            <p className="eyebrow">Carga</p>
             <h2 id="new-activity-title">Datos de la actividad</h2>
           </div>
         </div>

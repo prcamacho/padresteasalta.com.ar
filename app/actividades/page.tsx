@@ -26,8 +26,8 @@ export default async function ActividadesPage() {
     <SiteFrame>
       <PageIntro
         eyebrow="Actividades"
-        title="Agenda comunitaria para encuentros, charlas y convocatorias"
-        description="Esta pagina separa la agenda de la home para que luego pueda tener filtros, inscripciones, cupos, pagos y actividades externas."
+        title="Charlas, encuentros y movidas de la comunidad"
+        description="Aca vas a encontrar lo que estamos organizando o compartiendo para familias y personas con TEA."
         actions={[
           { label: "Proponer actividad", href: "/contacto", variant: "primary" },
           { label: "Colaborar", href: "/colaborar", variant: "secondary" }
@@ -37,8 +37,8 @@ export default async function ActividadesPage() {
       <section className="section">
         <SectionHeader
           eyebrow="Agenda"
-          title="Actividades publicadas"
-          description="Las actividades publicadas desde el panel aparecen aca. Si todavia no hay agenda cargada, mantenemos una base orientativa."
+          title="Lo que hay para agendar"
+          description="Si hay fecha, lugar o link de inscripcion, lo dejamos aca para que sea facil encontrarlo."
         />
 
         <div className="campaign-banner">
@@ -52,10 +52,10 @@ export default async function ActividadesPage() {
           />
           <div>
             <p className="eyebrow">Concientizacion</p>
-            <h3>Campanas que hacen visible el trabajo de la asociacion</h3>
+            <h3>Tambien salimos a hacer visible el autismo</h3>
             <p>
-              Las actividades tambien pueden servir para difundir campanas
-              publicas, encuentros comunitarios y acciones de sensibilizacion.
+              Las campanas sirven para abrir conversaciones, mostrar presencia y
+              recordar que hablar de autismo tambien cambia miradas.
             </p>
           </div>
         </div>
@@ -90,9 +90,9 @@ export default async function ActividadesPage() {
 
       <section className="section band">
         <SectionHeader
-          eyebrow="Escalable"
-          title="Lo que deberia soportar esta seccion"
-          description="La agenda no deberia quedarse como texto manual: tiene que poder operar eventos reales."
+          eyebrow="Para participar"
+          title="Que nadie llegue sin saber como es"
+          description="Tratamos de dejar claro si hay cupo, si hace falta inscribirse, donde es y que se va a hacer."
         />
 
         <div className="card-grid">
@@ -101,8 +101,8 @@ export default async function ActividadesPage() {
             "Pagos con Mercado Pago",
             "Actividades propias y externas",
             "Confirmaciones y recordatorios",
-            "Reportes para administradores",
-            "Historial de actividades pasadas"
+            "Registro de asistentes",
+            "Memoria de actividades realizadas"
           ].map((item) => (
             <article className="compact-card" key={item}>
               <h3>{item}</h3>
@@ -114,14 +114,14 @@ export default async function ActividadesPage() {
       <section className="cta-section">
         <div>
           <p className="eyebrow">Participacion</p>
-          <h2>La comunidad tambien puede acercar propuestas</h2>
+          <h2>Si tenes algo bueno para compartir, mandalo</h2>
           <p>
-            Organizaciones, profesionales, particulares o areas de gobierno
-            podran enviar actividades para revision antes de publicarlas.
+            Puede ser una charla, un taller, una convocatoria o una idea que
+            ayude a otras familias.
           </p>
         </div>
         <Link className="button primary" href="/contacto">
-          Enviar propuesta
+          Enviar actividad
         </Link>
       </section>
     </SiteFrame>

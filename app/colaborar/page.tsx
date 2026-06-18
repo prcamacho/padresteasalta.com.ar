@@ -24,10 +24,10 @@ export default async function ColaborarPage() {
     <SiteFrame>
       <PageIntro
         eyebrow="Colaborar"
-        title="Formas de sostener y ampliar el trabajo comunitario"
-        description="Esta seccion prepara el terreno para donaciones, eventos pagos, patrocinios, publicidad clara y apoyo a emprendimientos familiares."
+        title="Si queres ayudar, hay varias formas"
+        description="A veces es una donacion, otras es compartir una actividad, prestar un espacio, ofrecer un servicio o simplemente abrir una puerta."
         actions={[
-          { label: "Consultar colaboracion", href: "/contacto", variant: "primary" },
+          { label: "Quiero colaborar", href: "/contacto", variant: "primary" },
           { label: "Ver directorio", href: "/directorio", variant: "secondary" }
         ]}
       />
@@ -35,8 +35,8 @@ export default async function ColaborarPage() {
       <section className="section">
         <SectionHeader
           eyebrow="Opciones"
-          title="Ingresos posibles, con reglas claras"
-          description="La plataforma puede sumar ingresos sin perder confianza si separa bien donacion, pago, patrocinio y publicidad."
+          title="Cada ayuda tiene que quedar clara"
+          description="Para cuidar la confianza, dejamos claro que se aporta, para que sirve y como se muestra."
         />
 
         <div className="card-grid">
@@ -55,8 +55,8 @@ export default async function ColaborarPage() {
       <section className="section band">
         <SectionHeader
           eyebrow="Pagos"
-          title="Mercado Pago deberia integrarse por casos de uso"
-          description="No todos los pagos son iguales. Es mejor registrar el motivo y las condiciones desde el inicio."
+          title="No todo aporte es lo mismo"
+          description="Una donacion, una inscripcion y un patrocinio se manejan distinto. Mejor dejarlo claro desde el principio."
         />
 
         <div className="merch-layout">
@@ -86,14 +86,14 @@ export default async function ColaborarPage() {
       <section className="cta-section">
         <div>
           <p className="eyebrow">Legal y confianza</p>
-          <h2>Sorteos y campanas necesitan revision antes de publicarse</h2>
+          <h2>Si hacemos sorteos, que sea todo claro</h2>
           <p>
-            Si mas adelante se hacen rifas, sorteos o campanas similares, es
-            mejor validarlo antes con normativa local y condiciones publicas.
+            Si llega el momento de hacer rifas, sorteos o campanas especiales,
+            queremos reglas simples, visibles y sin letra chica.
           </p>
         </div>
         <Link className="button primary" href="/contacto">
-          Hablar con la organizacion
+          Escribir para colaborar
         </Link>
       </section>
     </SiteFrame>

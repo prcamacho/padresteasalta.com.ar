@@ -34,11 +34,11 @@ export async function HomePage() {
         <div className="hero-content">
           <p className="eyebrow">Salta, Argentina</p>
           <h1 id="hero-title">
-            Acompanamiento claro para familias y personas con TEA
+            Familias acompanando a familias
           </h1>
           <p>
-            Una plataforma comunitaria para orientacion, actividades,
-            directorios utiles y formas simples de colaborar.
+            Somos Padres TEA Salta. Armamos este espacio para tener a mano
+            orientacion, actividades, contactos utiles y formas de ayudarnos.
           </p>
           <div className="hero-actions" aria-label="Acciones principales">
             {homeActions.map((action) => (
@@ -62,9 +62,9 @@ export async function HomePage() {
 
       <section className="section">
         <SectionHeader
-          eyebrow="Portal"
-          title="Cada area tiene su propio lugar"
-          description="La home resume los caminos principales y dirige a paginas preparadas para crecer con contenido, datos y operaciones reales."
+          eyebrow="Por donde arrancar"
+          title="Si llegaste con una duda, empeza por aca"
+          description="Ordenamos lo mas buscado para que no tengas que andar saltando de un lado a otro."
         />
 
         <div className="route-grid">
@@ -84,7 +84,7 @@ export async function HomePage() {
         <SectionHeader
           eyebrow="Agenda"
           title="Actividades destacadas"
-          description="La agenda completa vive en su propia seccion, pero la home puede mostrar lo mas importante o urgente."
+          description="Lo que esta pasando o se viene pronto dentro de la comunidad."
         />
 
         <div className="activity-list">
@@ -108,11 +108,10 @@ export async function HomePage() {
       <section className="section two-column">
         <div>
           <p className="eyebrow">Directorio</p>
-          <h2>Informacion local con criterio de actualizacion</h2>
+          <h2>Datos utiles para no empezar de cero</h2>
           <p>
-            Centros, emprendimientos, aliados y recursos pueden crecer como
-            fichas administrables, con fecha de revision y patrocinio visible
-            cuando corresponda.
+            Cuando una familia pregunta si tenemos algun contacto, queremos que
+            haya un lugar claro donde buscar.
           </p>
         </div>
 
@@ -129,9 +128,9 @@ export async function HomePage() {
 
       <section className="section">
         <SectionHeader
-          eyebrow="Arquitectura"
-          title="Una base pensada para sumar modulos"
-          description="El sitio arranca simple, pero queda orientado a panel administrador, base de datos, multimedia, pagos y comunicaciones."
+          eyebrow="Nuestro modo"
+          title="Lo importante es que nada se pierda"
+          description="Una consulta, una fecha, un telefono o una foto pueden servirle a alguien. Mejor tenerlos ordenados."
         />
 
         <div className="platform-grid">

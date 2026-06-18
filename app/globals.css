@@ -102,15 +102,19 @@ h3 {
 
 .brand-mark {
   display: grid;
-  flex: 0 0 42px;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #173832;
+}
+
+.brand-mark img {
   width: 42px;
   height: 42px;
-  place-items: center;
-  border-radius: var(--radius);
-  color: #ffffff;
-  background: var(--teal);
-  font-size: 0.75rem;
-  font-weight: 900;
+  object-fit: contain;
 }
 
 .brand strong,

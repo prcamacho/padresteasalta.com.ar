@@ -7,7 +7,7 @@ import { getSafeNextPath } from "@/lib/account/redirects";
 export const metadata: Metadata = {
   title: "Registro | Padres TEA Salta",
   description:
-    "Registro de usuarios y organizaciones en la plataforma Padres TEA Salta."
+    "Crear una cuenta en Padres TEA Salta."
 };
 
 type RegisterPageProps = {
@@ -15,12 +15,12 @@ type RegisterPageProps = {
 };
 
 const errorMessages: Record<string, string> = {
-  "adult-required": "Solo personas mayores de edad deben registrarse.",
+  "adult-required": "El registro es solo para personas mayores de edad.",
   "missing-fields": "Completa todos los campos obligatorios.",
   "password-mismatch": "Las contrasenas no coinciden.",
   "privacy-required": "Debes aceptar la politica de privacidad.",
   "signup-failed": "No pudimos crear la cuenta. Revisa los datos ingresados.",
-  "weak-password": "La contrasena debe tener al menos 8 caracteres."
+  "weak-password": "La contrasena necesita al menos 8 caracteres."
 };
 
 function getParam(value: string | string[] | undefined) {
@@ -43,9 +43,9 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
           <p className="eyebrow">Registro</p>
           <h1 id="register-title">Crear cuenta</h1>
           <p>
-            El registro esta disponible para usuarios y organizaciones. Mas
-            adelante, las organizaciones podran necesitar documentacion
-            respaldatoria para acceder a funciones especificas.
+            Podes entrar como persona o como organizacion. Si despues queres
+            publicar algo o pedir un espacio, capaz te pedimos algun dato mas
+            para que todo quede claro.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
                 autoComplete="name"
                 maxLength={120}
                 name="display_name"
-                placeholder="Nombre y apellido o nombre de la organizacion"
+                placeholder="Tu nombre o el de la organizacion"
                 required
                 type="text"
               />
@@ -108,7 +108,7 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
                 autoComplete="tel"
                 maxLength={40}
                 name="phone"
-                placeholder="Numero de contacto"
+                placeholder="Un numero donde podamos escribirte"
                 required
                 type="tel"
               />
@@ -140,7 +140,7 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
           <div className="auth-checks">
             <label className="admin-checkbox">
               <input name="whatsapp_group_opt_in" type="checkbox" />
-              <span>Quiero ser agregado al grupo de WhatsApp de Padres TEA.</span>
+              <span>Quiero que me sumen al grupo de WhatsApp de Padres TEA.</span>
             </label>
 
             <label className="admin-checkbox">
@@ -151,7 +151,7 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
             <label className="admin-checkbox">
               <input name="privacy_terms_accepted" required type="checkbox" />
               <span>
-                Acepto la{" "}
+                Lei y acepto la{" "}
                 <Link href="/privacidad" target="_blank">
                   politica de privacidad y uso de datos
                 </Link>

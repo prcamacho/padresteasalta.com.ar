@@ -13,7 +13,7 @@ import { requireAdmin } from "@/lib/supabase/auth-server";
 
 export const metadata: Metadata = {
   title: "Actividades | Panel admin",
-  description: "Listado de actividades administrables."
+  description: "Gestion de actividades de Padres TEA Salta."
 };
 
 export const dynamic = "force-dynamic";
@@ -65,10 +65,10 @@ export default async function AdminActivitiesPage({
             Volver al panel
           </Link>
           <p className="eyebrow">Actividades</p>
-          <h1>Agenda administrable</h1>
+          <h1>Agenda de la asociacion</h1>
           <p>
-            Listado operativo de encuentros, charlas y convocatorias guardadas
-            en Supabase.
+            Aca cargamos y revisamos las charlas, encuentros y convocatorias que
+            se ven en el sitio.
           </p>
         </div>
 
@@ -89,11 +89,11 @@ export default async function AdminActivitiesPage({
       </section>
 
       {created ? (
-        <p className="form-success">Actividad creada correctamente.</p>
+        <p className="form-success">Listo, la actividad quedo cargada.</p>
       ) : null}
 
       {updated ? (
-        <p className="form-success">Actividad actualizada correctamente.</p>
+        <p className="form-success">Listo, los cambios quedaron guardados.</p>
       ) : null}
 
       {listError ? (
@@ -110,7 +110,7 @@ export default async function AdminActivitiesPage({
             <p className="eyebrow">Listado</p>
             <h2 id="admin-activities-title">Actividades cargadas</h2>
           </div>
-          <span>{activities.length} registros</span>
+          <span>{activities.length} cargadas</span>
         </div>
 
         {activities.length > 0 ? (
@@ -172,8 +172,8 @@ export default async function AdminActivitiesPage({
           <div className="admin-empty">
             <h3>No hay actividades cargadas todavia</h3>
             <p>
-              El listado ya esta conectado. El siguiente paso es sumar alta y
-              edicion desde este mismo modulo.
+              Cuando cargues la primera, va a aparecer aca para revisarla o
+              editarla.
             </p>
           </div>
         )}

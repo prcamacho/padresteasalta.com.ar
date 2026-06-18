@@ -22,7 +22,7 @@ type EditActivityPageProps = {
 const errorMessages: Record<string, string> = {
   "invalid-date": "Revisa las fechas ingresadas.",
   "invalid-range": "La fecha de fin no puede ser anterior al inicio.",
-  "invalid-url": "El link de inscripcion debe empezar con http:// o https://.",
+  "invalid-url": "El link de inscripcion tiene que empezar con http:// o https://.",
   "missing-required": "Completa titulo y resumen para guardar la actividad.",
   "save-failed": "No pudimos guardar los cambios. Intentalo nuevamente."
 };
@@ -55,8 +55,8 @@ export default async function EditActivityPage({
           <p className="eyebrow">Actividades</p>
           <h1>Editar actividad</h1>
           <p>
-            Actualiza los datos de la actividad. Si cambias el titulo, el slug
-            tambien se ajusta de forma automatica.
+            Dale una mirada tranquila antes de guardar. Si cambias el titulo,
+            tambien se acomoda el link interno de la actividad.
           </p>
         </div>
       </header>
@@ -66,7 +66,7 @@ export default async function EditActivityPage({
           <div>
             <p className="eyebrow">Edicion</p>
             <h2 id="edit-activity-title">
-              {activity?.title ?? "Actividad no disponible"}
+              {activity?.title ?? "No encontramos esta actividad"}
             </h2>
           </div>
         </div>

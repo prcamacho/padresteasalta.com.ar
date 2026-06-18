@@ -41,14 +41,15 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           <p className="eyebrow">Cuenta</p>
           <h1 id="login-title">Ingresar</h1>
           <p>
-            Accede para usar las funciones disponibles ahora y las que se
-            habiliten segun tu tipo de cuenta.
+            Entra con tu cuenta para tener tus datos a mano y seguir
+            participando desde el sitio.
           </p>
         </div>
 
         {registered ? (
           <p className="form-success">
-            Cuenta creada. Ya podes ingresar con tu email y contrasena.
+            Listo, la cuenta ya esta creada. Ahora entra con tu email y
+            contrasena.
           </p>
         ) : null}
 

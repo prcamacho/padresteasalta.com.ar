@@ -58,7 +58,7 @@ export const siteNavItems: SiteNavItem[] = [
 ];
 
 export const homeActions: SiteAction[] = [
-  { label: "Pedir orientacion", href: "/contacto", variant: "primary" },
+  { label: "Necesito una mano", href: "/contacto", variant: "primary" },
   { label: "Ver actividades", href: "/actividades", variant: "secondary" }
 ];
 
@@ -66,59 +66,59 @@ export const homeRoutes: RouteCard[] = [
   {
     title: "Orientacion",
     description:
-      "Consultas sobre tramites, derechos, escuela, salud, turnos o situaciones de discriminacion.",
+      "Si estas perdido con tramites, escuela, salud o derechos, arrancamos por ahi.",
     href: "/orientacion"
   },
   {
     title: "Actividades",
     description:
-      "Encuentros, charlas, talleres, convocatorias y propuestas relevantes para la comunidad.",
+      "Charlas, encuentros y movidas para aprender, compartir y no quedarse solo.",
     href: "/actividades"
   },
   {
     title: "Directorio",
     description:
-      "Centros terapeuticos, emprendimientos familiares, empresas aliadas y recursos utiles.",
+      "Contactos y recursos de Salta para tener a mano cuando hacen falta.",
     href: "/directorio"
   },
   {
     title: "Colaborar",
     description:
-      "Donaciones, voluntariado, patrocinios, publicidad y apoyo a proyectos familiares.",
+      "Si queres dar una mano, aca te contamos por donde se puede empezar.",
     href: "/colaborar"
   }
 ];
 
 export const trustMarkers = [
-  "Lenguaje claro",
-  "Datos cuidados",
-  "Comunidad local"
+  "Hablar sin vueltas",
+  "Cuidar lo que nos cuentan",
+  "Estar cerca"
 ];
 
 export const orientationGuides: InfoCard[] = [
   {
     title: "Primeros pasos",
     description:
-      "Una guia inicial para ordenar dudas, documentacion, turnos y necesidades urgentes.",
-    note: "Pensado para familias que no saben por donde empezar."
+      "Cuando hay mil cosas dando vueltas y no sabes que hacer primero.",
+    note: "Respirar, ordenar y empezar por una cosa. De a poco."
   },
   {
     title: "Tramites y derechos",
     description:
-      "Informacion practica sobre certificados, cobertura, apoyos, reclamos y organismos.",
-    note: "Debe crecer con enlaces oficiales y material revisado."
+      "Certificados, coberturas, turnos, reclamos y esas vueltas que cansan.",
+    note: "Anotar fechas, nombres y guardar comprobantes ayuda mucho."
   },
   {
     title: "Escuela e inclusion",
     description:
-      "Orientacion sobre acompanamiento escolar, ajustes razonables y dialogo con instituciones.",
-    note: "Sin reemplazar asesoramiento legal o profesional."
+      "Para hablar con la escuela, pedir apoyos y buscar acuerdos posibles.",
+    note: "Cada chico, chica y familia tiene su propio camino."
   },
   {
     title: "Discriminacion",
     description:
-      "Pasos sugeridos para registrar situaciones, pedir ayuda y encontrar canales adecuados.",
-    note: "El panel futuro puede priorizar estos casos."
+      "Si algo no estuvo bien, primero conviene dejar escrito que paso.",
+    note: "No es exagerar: es cuidarse y tener memoria de lo ocurrido."
   }
 ];
 
@@ -127,21 +127,21 @@ export const activities: ActivityItem[] = [
     title: "Encuentro de familias",
     meta: "Proxima fecha a confirmar",
     description:
-      "Un espacio de acompanamiento entre pares para compartir dudas, experiencias y recursos.",
+      "Un rato para hablar con otras familias, compartir dudas y sentirse acompanado.",
     status: "Comunitario"
   },
   {
     title: "Charla sobre tramites y derechos",
     meta: "Modalidad presencial o virtual",
     description:
-      "Orientacion practica para familias que necesitan ordenar documentacion, turnos o reclamos.",
+      "Para ordenar papeles, preguntas y pasos posibles sin volverse loco.",
     status: "Orientacion"
   },
   {
     title: "Convocatorias y actividades externas",
     meta: "Organizaciones, particulares y gobierno",
     description:
-      "Agenda abierta para difundir propuestas relevantes para personas con TEA y sus familias.",
+      "Tambien compartimos propuestas de otros espacios cuando creemos que pueden servir.",
     status: "Agenda"
   }
 ];
@@ -150,26 +150,26 @@ export const directoryCategories: InfoCard[] = [
   {
     title: "Centros terapeuticos",
     description:
-      "Fichas con localidad, especialidades, contactos, horarios y fecha de ultima actualizacion.",
-    note: "Los espacios destacados se mostraran como patrocinados."
+      "Datos basicos para consultar con menos vueltas: donde, que hacen y como ubicarlos.",
+    note: "Si algo aparece destacado, lo vas a ver marcado como patrocinado."
   },
   {
     title: "Emprendimientos familiares",
     description:
-      "Espacio de bajo costo o gratuito para proyectos impulsados por familias de la comunidad.",
-    note: "Pensado para visibilidad, redes y colaboracion."
+      "Proyectos de familias que tambien necesitan vidriera y empuje.",
+    note: "Compartir, recomendar o comprar tambien ayuda."
   },
   {
     title: "Empresas y aliados",
     description:
-      "Organizaciones que colaboran, patrocinan espacios o participan en campanas especificas.",
-    note: "Con criterios claros de publicacion."
+      "Comercios, profesionales e instituciones que quieren acompanar de verdad.",
+    note: "Lo mostramos claro para que nadie confunda apoyo con recomendacion."
   },
   {
     title: "Recursos utiles",
     description:
-      "Organismos, enlaces oficiales, materiales descargables y referencias de apoyo.",
-    note: "Cada recurso deberia indicar fuente y fecha."
+      "Telefonos, enlaces y datos que esta bueno tener guardados.",
+    note: "Si ves algo viejo o incorrecto, avisarnos suma un monton."
   }
 ];
 
@@ -177,49 +177,49 @@ export const collaborationOptions: InfoCard[] = [
   {
     title: "Donaciones",
     description:
-      "Base preparada para integrar Mercado Pago y registrar operaciones de forma ordenada.",
-    note: "Puede empezar con donacion unica y luego sumar recurrencia."
+      "Aportes para bancar encuentros, materiales, traslados y movidas comunitarias.",
+    note: "Ninguna ayuda es chica cuando se suma con otras."
   },
   {
     title: "Eventos y talleres",
     description:
-      "Inscripciones, cupos, confirmaciones y pagos para actividades presenciales o virtuales.",
-    note: "El admin necesitara reportes simples."
+      "Charlas y talleres con cupos, inscripcion y avisos claros.",
+    note: "Cuando algo esta bien organizado, todos respiramos mejor."
   },
   {
     title: "Espacios patrocinados",
     description:
-      "Banners, fichas destacadas y apoyos visibles con vencimiento y renovacion.",
+      "Lugares visibles para aliados que quieren apoyar el trabajo de la asociacion.",
     note: "Siempre identificados como patrocinados."
   },
   {
     title: "Emprendimientos familiares",
     description:
-      "Opciones gratis o de bajo costo para que la comunidad pueda mostrar sus proyectos.",
-    note: "Con moderacion previa para cuidar calidad y seguridad."
+      "Un empujon para que proyectos familiares lleguen un poco mas lejos.",
+    note: "Miramos cada publicacion antes de compartirla."
   }
 ];
 
 export const platformModules: InfoCard[] = [
   {
-    title: "Panel administrador",
+    title: "Informacion al dia",
     description:
-      "Gestionar contenidos, actividades, directorios, consultas, pagos, reportes y usuarios."
+      "Que las fechas, contactos y datos importantes no queden perdidos."
   },
   {
-    title: "Base de datos",
+    title: "Consultas ordenadas",
     description:
-      "Supabase/PostgreSQL para permisos, auditoria, contactos, fichas, eventos y operaciones."
+      "Que cada mensaje tenga seguimiento y no quede en el aire."
   },
   {
-    title: "Multimedia",
+    title: "Materiales cuidados",
     description:
-      "Cloudflare R2 para imagenes, flyers, documentos publicos y archivos cargados desde el panel."
+      "Flyers, fotos y documentos a mano, sin andar revolviendo chats."
   },
   {
-    title: "Comunicaciones",
+    title: "Avisos a tiempo",
     description:
-      "Email, Telegram, Meta y WhatsApp Business con consentimiento y plantillas aprobadas."
+      "Si hay una novedad importante, que llegue cuando tiene que llegar."
   }
 ];
 
@@ -227,22 +227,22 @@ export const contactChannels: ContactChannel[] = [
   {
     title: "Consulta de orientacion",
     description:
-      "Para familias o personas con TEA que necesitan ordenar una duda o pedir acompanamiento.",
+      "Para contar que esta pasando y pedir ayuda para ordenar el tema.",
     action: "Escribir por email",
     href: "mailto:contacto@padresteasalta.com.ar"
   },
   {
     title: "Proponer una actividad",
     description:
-      "Para organizaciones, profesionales, particulares o areas de gobierno que quieran difundir una propuesta.",
-    action: "Enviar propuesta",
+      "Si tenes una charla, taller o encuentro que puede servir, mandalo.",
+    action: "Enviar actividad",
     href: "mailto:actividades@padresteasalta.com.ar"
   },
   {
     title: "Sumar un directorio",
     description:
-      "Para centros, emprendimientos familiares, empresas o recursos utiles que deban ser revisados.",
-    action: "Solicitar revision",
+      "Para pasar un centro, emprendimiento, comercio aliado o dato util.",
+    action: "Enviar datos",
     href: "mailto:directorio@padresteasalta.com.ar"
   }
 ];
@@ -252,9 +252,9 @@ export const sponsorSlots: Record<SponsorSlot["placement"], SponsorSlot> = {
     id: "home-main-ally",
     placement: "home",
     label: "Espacio para aliados",
-    title: "Tu apoyo puede ayudar a sostener esta web",
+    title: "Tu apoyo ayuda a sostener este espacio",
     description:
-      "Reservamos este lugar para empresas, profesionales o instituciones que quieran acompanar el crecimiento de la comunidad.",
+      "Este lugar puede ser para empresas, profesionales o instituciones que quieran estar cerca.",
     actionLabel: "Consultar este espacio",
     href: "/contacto"
   },
@@ -262,9 +262,9 @@ export const sponsorSlots: Record<SponsorSlot["placement"], SponsorSlot> = {
     id: "activities-event-ally",
     placement: "activities",
     label: "Actividad acompanada por",
-    title: "Un aliado puede acompanar encuentros y charlas",
+    title: "Aliados presentes en encuentros y charlas",
     description:
-      "Este espacio esta pensado para sponsors de actividades, talleres o convocatorias, siempre identificado con claridad.",
+      "Si una actividad tiene apoyo de un sponsor, lo mostramos sin vueltas.",
     actionLabel: "Acompanar una actividad",
     href: "/contacto"
   },
@@ -274,17 +274,17 @@ export const sponsorSlots: Record<SponsorSlot["placement"], SponsorSlot> = {
     label: "Destacado patrocinado",
     title: "Espacio destacado para centros, empresas o recursos utiles",
     description:
-      "Los destacados ayudan a sostener la plataforma y se muestran separados de la informacion verificada del directorio.",
+      "Los destacados ayudan a sostener el sitio y aparecen claramente marcados.",
     actionLabel: "Consultar destacado",
     href: "/contacto"
   },
   support: {
     id: "support-general-slot",
     placement: "support",
-    label: "Patrocinio disponible",
-    title: "Acompanar la plataforma tambien es colaborar",
+    label: "Espacio para sumarse",
+    title: "Acompanar este espacio tambien es colaborar",
     description:
-      "Podemos preparar espacios de apoyo para instituciones, comercios o profesionales que quieran sumar valor real.",
+      "Hay lugar para comercios, profesionales e instituciones que quieran sumar bien.",
     actionLabel: "Hablar sobre patrocinio",
     href: "/contacto"
   },
@@ -292,9 +292,9 @@ export const sponsorSlots: Record<SponsorSlot["placement"], SponsorSlot> = {
     id: "footer-ally-slot",
     placement: "footer",
     label: "Aliados",
-    title: "Espacio institucional disponible",
+    title: "Un lugar para quienes acompanan",
     description:
-      "Un lugar discreto para reconocer acompanamientos generales de la plataforma.",
+      "Un lugar simple para agradecer a quienes acompanen el proyecto.",
     actionLabel: "Consultar",
     href: "/contacto"
   }
