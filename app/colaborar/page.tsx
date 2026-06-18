@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { AdSlot } from "@/components/ads/AdSlot";
@@ -58,15 +59,27 @@ export default async function ColaborarPage() {
           description="No todos los pagos son iguales. Es mejor registrar el motivo y las condiciones desde el inicio."
         />
 
-        <div className="process-list">
-          {[
-            "Donacion: aporte voluntario, unico o recurrente.",
-            "Evento: inscripcion, cupo, comprobante y asistencia.",
-            "Patrocinio: periodo contratado, ubicacion visible y vencimiento.",
-            "Merchandising: producto, stock, envio o retiro."
-          ].map((step) => (
-            <p key={step}>{step}</p>
-          ))}
+        <div className="merch-layout">
+          <div className="process-list">
+            {[
+              "Donacion: aporte voluntario, unico o recurrente.",
+              "Evento: inscripcion, cupo, comprobante y asistencia.",
+              "Patrocinio: periodo contratado, ubicacion visible y vencimiento.",
+              "Merchandising: producto, stock, envio o retiro."
+            ].map((step) => (
+              <p key={step}>{step}</p>
+            ))}
+          </div>
+
+          <div className="merch-visual">
+            <Image
+              src="/images/asociacion/camiseta-hablemos-autismo.png"
+              alt="Camiseta de la campana Hablemos de Autismo"
+              width={422}
+              height={431}
+              sizes="(min-width: 820px) 320px, 70vw"
+            />
+          </div>
         </div>
       </section>
 

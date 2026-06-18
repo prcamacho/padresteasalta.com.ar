@@ -23,8 +23,8 @@ export async function HomePage() {
     <SiteFrame>
       <section className="hero" aria-labelledby="hero-title">
         <Image
-          src="/images/community-support.png"
-          alt="Familias reunidas en un espacio comunitario de apoyo"
+          src="/images/asociacion/comunidad-color.jpg"
+          alt="Familias reunidas en una actividad comunitaria de concientizacion sobre autismo"
           fill
           priority
           sizes="100vw"

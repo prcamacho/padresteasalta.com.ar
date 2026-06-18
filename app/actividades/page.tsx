@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { AdSlot } from "@/components/ads/AdSlot";
@@ -39,6 +40,25 @@ export default async function ActividadesPage() {
           title="Actividades publicadas"
           description="Las actividades publicadas desde el panel aparecen aca. Si todavia no hay agenda cargada, mantenemos una base orientativa."
         />
+
+        <div className="campaign-banner">
+          <Image
+            src="/images/asociacion/abril-autismo.gif"
+            alt="Campana En abril Argentina habla de autismo"
+            width={605}
+            height={224}
+            sizes="(min-width: 820px) 420px, 100vw"
+            unoptimized
+          />
+          <div>
+            <p className="eyebrow">Concientizacion</p>
+            <h3>Campanas que hacen visible el trabajo de la asociacion</h3>
+            <p>
+              Las actividades tambien pueden servir para difundir campanas
+              publicas, encuentros comunitarios y acciones de sensibilizacion.
+            </p>
+          </div>
+        </div>
 
         <div className="activity-list">
           {publicActivities.map((activity) => (

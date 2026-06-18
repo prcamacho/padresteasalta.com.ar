@@ -417,6 +417,30 @@ h3 {
   font-weight: 900;
 }
 
+.campaign-banner {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--paper);
+}
+
+.campaign-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: #0b63b6;
+}
+
+.campaign-banner p:not(.eyebrow) {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .two-column,
 .split-band,
 .cta-section {
@@ -477,6 +501,28 @@ h3 {
   line-height: 1.6;
 }
 
+.support-visual-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.association-cutout {
+  display: grid;
+  min-height: 300px;
+  place-items: end center;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(246, 239, 231, 0.18)),
+    var(--paper);
+}
+
+.association-cutout img {
+  width: min(78%, 330px);
+  height: auto;
+  object-fit: contain;
+}
+
 .platform-card,
 .compact-card {
   min-height: 144px;
@@ -502,6 +548,29 @@ h3 {
   color: var(--muted);
   background: var(--paper);
   line-height: 1.6;
+}
+
+.merch-layout {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.merch-visual {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(18, 108, 103, 0.12), rgba(200, 95, 74, 0.1)),
+    var(--paper);
+}
+
+.merch-visual img {
+  width: min(74%, 320px);
+  height: auto;
+  object-fit: contain;
 }
 
 .text-link {
@@ -600,6 +669,34 @@ h3 {
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-identity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-identity p {
+  grid-column: 2;
+}
+
+.footer-logo-wrap {
+  display: grid;
+  grid-row: span 2;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #173832;
+}
+
+.footer-logo-wrap img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .footer-brand {
@@ -1093,7 +1190,9 @@ h3 {
   .two-column,
   .split-band,
   .cta-section,
-  .ad-slot {
+  .ad-slot,
+  .campaign-banner,
+  .merch-layout {
     grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
   }
 

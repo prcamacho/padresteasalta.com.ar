@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/layout/SiteFrame";
@@ -55,14 +56,26 @@ export default function OrientacionPage() {
           </p>
         </div>
 
-        <div className="support-panel">
-          <p>Futuro flujo de atencion</p>
-          <ul>
-            <li>Consulta recibida con consentimiento.</li>
-            <li>Aviso al equipo por email o Telegram.</li>
-            <li>Estado interno: nueva, en revision, respondida.</li>
-            <li>Historial cuidado y visible solo para roles autorizados.</li>
-          </ul>
+        <div className="support-visual-stack">
+          <div className="association-cutout">
+            <Image
+              src="/images/asociacion/familia-padres-tea.png"
+              alt="Persona adulta caminando de la mano con una nina usando remeras de la campana Hablemos de Autismo"
+              width={433}
+              height={577}
+              sizes="(min-width: 820px) 360px, 70vw"
+            />
+          </div>
+
+          <div className="support-panel">
+            <p>Futuro flujo de atencion</p>
+            <ul>
+              <li>Consulta recibida con consentimiento.</li>
+              <li>Aviso al equipo por email o Telegram.</li>
+              <li>Estado interno: nueva, en revision, respondida.</li>
+              <li>Historial cuidado y visible solo para roles autorizados.</li>
+            </ul>
+          </div>
         </div>
       </section>
 

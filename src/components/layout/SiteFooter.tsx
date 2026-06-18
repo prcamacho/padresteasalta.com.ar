@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { siteNavItems } from "@/data/site";
@@ -5,7 +6,15 @@ import { siteNavItems } from "@/data/site";
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div>
+      <div className="footer-identity">
+        <span className="footer-logo-wrap" aria-hidden="true">
+          <Image
+            src="/images/asociacion/logo-padres-tea-salta.png"
+            alt=""
+            width={92}
+            height={92}
+          />
+        </span>
         <p className="footer-brand">Padres TEA Salta</p>
         <p>Plataforma comunitaria en construccion.</p>
       </div>
